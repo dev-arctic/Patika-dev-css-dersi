@@ -1,6 +1,8 @@
 /* 
     class için .texet-red
     id için #id-bilgisi.
+    Bir HTML elementi kendini kapsayan elementin (parent elementi) stil özelliklerine sahip olur.
+
 */
 .text-red
     {
@@ -15,3 +17,10 @@
         font-size: 26px;
     }
      
+#first-articles-in-main 
+{
+    background-color: antiquewhite;
+}
+.second-articles, .third-articles {
+
+}
