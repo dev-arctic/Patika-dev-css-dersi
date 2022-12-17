@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+
+        }
+        /* div {
+            background-color: bisque;
+        }
+        #div1 {
+            float: left;
+        }
+        #div2 {
+            float: left;
+
+        }
+        #div3 {
+            float: left;
+        }
+       */
+       /* .divs {
+        width: 300px;
+        height: 100px;
+        float: left;
+       }
+       #first-div {
+        background-color: bisque;
+       }
+       #second-div {
+        background-color: aqua;
+       }
+       #third-div {
+        background-color: rebeccapurple;
+       } */
+       #main-header {
+        width: 100%;
+       }
+       #header-h1 {
+        float: left;
+       }
+       ul {
+        list-style-type: none;
+       }
+       nav {
+        float: right;
+        margin-right: 30%;
+       }
+       li {
+        float: left;
+        line-height: 50px;
+       }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+      <!--  
+        box-model {
+
+        }
+        margin {
+            dış boşluklar
+            kutunun dış kısmından dışarı doğru olan boşlukları ayarlarız
+            marging:yukau/assagı - sağsol 2
+            margin: yukarı sağ aşşagı sol 4 
+            margin: yukarı sğ-sl assagı 3
+            margin-top : 10px -> yukarıdan 10 px beni yiter
+            margin:auto otomatik boşluk bırak sağdan soldan
+
+            **** marginlerde üstüste binme olayı mevcut ne demek yani 
+                2 div düşünün alt alta üsteki dive mb-50px verdim 
+                alttaki div ile arasında 50 px'lik boşluk açar 
+                alttaki dive ise mt-40px verdim yine üsteki div ile arasında
+                40px lik bir boşluk açar fakat alttaki div kendini mevcut konumundan 40 px aşşağı yittermez çünkü diğre mb-50px'lik boşluğun içine girer ve aslıdna 40px lik bir boşluk yaratmış olur kendine buna iç içe girmiş margin denir 
+                ne zaman 50px'i aşarsak mesela 60 px yaptı o sınırı aşacağı için kendni bir 10px aşşağı atar. 
+                yani iki margin çakıştıpında etiketlerin alacağı değer en büyük değer oluyor.  *******
+        }
+        padding {
+            iç boşlukları ifade eder. etiketin iç kısmı ile etiket içindeki içerik arasındaki boşluğu ayarlarız.
+            bir etikete padding verdiğimimde onun width oramımı artırırız.
+        }
+
+        box-model {
+            her etiketin kendine özgü hacmi var.
+            box-model bir etikete 500px değerinde bir width-heighy verebilriz
+            dah sonra padding ve border verirsek bnların üstüne bu değer daha önce eklediğimiz 500px'lin üstünde eklenir.
+            margin etkiemez fakat margin hayalet bir genişlik katar.
+            vereceğimiz her poadding vs. değeri sğ sol gibi ayrı değerler ile etkşilenir. 20 px veridk 20 sağdan 20 soldan alır gibi.
+        }
+        box-sizing {
+            boz-sizing:border-box
+            bunu dedikten sonra hesaplamayı yalnızca girilen değerin üstünden yapıyor. yani eklenecek olan değerlre 500px'e uygun ekleniyor.
+            padding değerlerini verirken hali hazırda olan değerlerin üstüne çıkmakmak gerekir 
+            mesela 
+            150px width ve 200 px height bir div var
+            biz padding-right: 100 dersek sıkıntı olmaz bu yapacğı işi 150px'le ayarlayarak yapar fakat 250 px versek 250'yi 150'ye göre nasıl ayarlasın saçma olur bu yüzden buna dikkat etmek gerekir.
+        }
+    
+        background {
+            opacity -> yine transparanlık ayarlar
+            hsl color ->renk kullanımı 
+            rgba -> 255,0,0,0.5 -> sonuncusu tranparanlık sağlar 
+
+            backgroın-image: url(dosya kaynağı)
+            varsayılan olarak vberilen görseller tekrarlı halde gelir.  
+            background-repat: no-repat -> tek bir şekilde tekrarlanmadan 
+            
+            gözükür. farklı kullanımlarıda var.
+            yalnızca tekrarlanması istediğin bölümleri x-yolarak verbilriz
+
+            background-repeat: repeat-x; x ekseninde tekrar eder.
+
+            arka plan resminin konumunu aylarsız
+            background-position:top-rigth; -> sağ üste doğru ayarla vs. gibi özellikleri var.
+
+            background-arrachment: fixed; göresl sizi takip eder. fixed=sabit
+            scrol varsayılan özelliği aynı kalıyor.
+
+            hızlı kullanım ;
+            background: #ffffff url() no-repeat top right fixed vs. gibi 
+            tek tsatırda iş biter. 
+            ilk değeri algılar sırasıyla ne verirsen onu algılar.
+
+
+        }
+
+        float {
+            etiketler blocak olarak (bazıları hariç) tanımlı olduğu için kendiden sonra gelen başka bir etiketi bir aşşağıya yollar 
+            witdh ne olursa olsun yine bir aşşağı satıra atar
+
+            css'de float özeliği bir akış oluşturarak kutular etiketleri yan yana sıralamamızı sağlar 
+            float = yaslamak
+            
+            diğer etiketlerden bağımısz bir akış oluşturur ve diğer etiketlerin üstüne çıka bilir.
+
+            clear -> float tyeni bir akış olduğu için bir altındaki etiketleri altına alabilir bun engellemek için clear özlliğini kullanırız
+            clear: left; var olan akış nerdeyse 
+            yani clear beni etkileyen bir akış varsa onu etikisiz kıl demek gibi birşey
+            genelde .clearFix sınıfı vardır buna both diyerek sağ sol nere varsa akışıtamizle demek 
+
+            bunu deriz ve boş bir dive bunu sınır yapmak istediğimiz yere ekleriz
+            ***** akışların yolunu kesip yeni akışlar oluştura bilrim.
+
+            div
+            div
+            div buraya kadar float left diyelim
+            div -> bu diğerlerinini altında şuanda farklı akışın altına girdi
+
+
+            div
+            div
+            divfloat:left; buraya kadar
+            div clear:both;
+            div both sayesinde bir sınır oluşturdu ve normal akışında 
+
+            yani akışın yolunu bir yerde kapatmak gerekir.
+
+            float akışı içerisinde içereikler kutunun içinden taşabilir.
+
+            bunu önlemek için owerflow: auto;
+            beya
+            cleafFix sınıf oluşturulup şöyle bir yol izlene bilir
+            content:"";
+            clear:both;
+            display:table;
+            git araştır neytmiş bu
+        }
+    -->
+        
+
+        <!-- <div id="div1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, inventore.</div>
+        <div id="div2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, inventore.</div>
+        <div id="div3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, sed.</div> -->
+<!-- 
+        <div style="width: 2000px;">
+        <div id="first-div" class="divs"></div>
+        <div id="second-div" class="divs"></div>
+        <div id="third-div" class="divs"></div>
+    </div>
+     -->
+
+     <header id="main-header">
+        <h1 id="header-h1">Lorem.</h1>
+        <nav>
+            <ul>
+                <li>Lorem.</li>
+                <li>Facere!</li>
+                <li>Sunt!</li>
+            </ul>
+        </nav>
+     </header>
+     <div style="clear: both;"></div>
+     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, omnis.</p>
+</body>
+</html>
